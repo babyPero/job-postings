@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Portal</title>
+</head>
+<body>
+
+<ul class="job-postings">
+  <% for(var i=0; i<postings.length; i++) {%>
+     <li class="postings">
+      <span><%= postings[i].job_name %></span>
+      <span><%= postings[i].job_description %></span>
+      <span><%= postings[i].category %></span>
+      <span><%= postings[i].location %></span>
+      <span><%= postings[i].posted_date %></span>
+    </li>
+  <% } %>
+</ul>
+
+<form action="/job-postings" method="POST">
+    <input type="text" placeholder="job-name" name="job-name">
+    <input type="text" placeholder="job-description" name="job-description">
+    <input type="text" placeholder="category" name="category">
+    <input type="text" placeholder="location" name="location">
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
